@@ -18,6 +18,10 @@ class Note(Pitch):
         return Note(octave_offset, major_degree, False, quarter_length)
 
     @staticmethod
+    def new_from_pitch(pitch: Pitch, quarter_length: Fraction):
+        return Note(pitch.octave_offset, pitch.major_degree, False, quarter_length)
+
+    @staticmethod
     def new_rest(quarter_length: Fraction):
         return Note(None, None, True, quarter_length)
 
